@@ -34,15 +34,15 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <Image
               src="/logo.png"
               alt="Oculus Santé Ophtalmologie"
-              width={48}
-              height={48}
-              className="h-12 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+              width={80}
+              height={80}
+              className="h-20 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105"
               priority
             />
             <div className="flex flex-col">

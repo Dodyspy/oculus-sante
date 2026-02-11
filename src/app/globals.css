@@ -25,10 +25,11 @@ body::before {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse at 20% 20%, rgba(90, 150, 90, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 30%, rgba(184, 134, 11, 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(196, 154, 92, 0.08) 0%, transparent 50%),
-    linear-gradient(160deg, #f2f7f2 0%, #faf6f0 25%, #fdf9f3 50%, #f0e6d4 75%, #e0ede0 100%);
+    radial-gradient(ellipse at 15% 15%, rgba(13, 122, 63, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 20%, rgba(184, 134, 11, 0.14) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 90%, rgba(13, 122, 63, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 70% 60%, rgba(212, 168, 40, 0.06) 0%, transparent 40%),
+    linear-gradient(160deg, #edfdf5 0%, #fdf9f3 30%, #f5ead6 60%, #d1fae5 100%);
   background-attachment: fixed;
 }
 

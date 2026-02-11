@@ -14,7 +14,6 @@ import {
   Phone,
   MapPin,
   Clock,
-  Star,
   ChevronRight,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -85,7 +84,7 @@ export default function Home() {
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
 
         {/* Decorative elements */}
         <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-bronze-200/20 blur-3xl" />
@@ -111,7 +110,7 @@ export default function Home() {
               transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bronze-100/60 border border-bronze-200/50 mb-8">
-                <div className="w-2 h-2 rounded-full bg-sage-500 animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-xs font-medium text-bronze-700 uppercase tracking-wider">
                   Cabinet ouvert — Prenez rendez-vous
                 </span>
@@ -205,44 +204,15 @@ export default function Home() {
                   </div>
                 </motion.div>
 
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-4 -right-8 glass-card rounded-2xl px-4 py-3 shadow-lg"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="flex -space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-3 h-3 text-gold-500 fill-gold-500"
-                        />
-                      ))}
-                    </div>
-                    <p className="text-xs font-semibold text-bronze-800">
-                      Excellence
-                    </p>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-bronze-300 flex items-start justify-center p-1.5">
-            <div className="w-1.5 h-3 rounded-full bg-bronze-400" />
-          </div>
-        </motion.div>
       </section>
 
       {/* ═══════════════════ SERVICES ═══════════════════ */}
-      <section id="services" className="py-24 bg-white/70 backdrop-blur-sm">
+      <section id="services" className="py-24 bg-emerald-50/60 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -288,12 +258,12 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ ABOUT PREVIEW ═══════════════════ */}
-      <section className="py-24 bg-cream-100/70 backdrop-blur-sm">
+      <section className="py-24 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <div className="relative">
-                <div className="w-full aspect-[4/3] rounded-3xl bg-gradient-to-br from-bronze-200 via-cream-300 to-sage-200 overflow-hidden shadow-2xl shadow-bronze-200/30">
+                <div className="w-full aspect-[4/3] rounded-3xl bg-gradient-to-br from-bronze-200 via-cream-300 to-emerald-100 overflow-hidden shadow-2xl shadow-bronze-200/30">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center p-8">
                       <div className="w-20 h-20 rounded-full gradient-bronze mx-auto mb-4 flex items-center justify-center">
@@ -355,7 +325,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TEAM PREVIEW ═══════════════════ */}
-      <section id="equipe" className="py-24 bg-white/70 backdrop-blur-sm">
+      <section id="equipe" className="py-24 bg-cream-200/60 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -406,7 +376,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ STATS ═══════════════════ */}
-      <section className="py-20 gradient-bronze bg-opacity-70 backdrop-blur-sm">
+      <section className="py-20 bg-emerald-700/90 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -431,10 +401,10 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ GALLERY PREVIEW ═══════════════════ */}
-      <section className="py-24 bg-white/70 backdrop-blur-sm">
+      <section className="py-24 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-emerald-600 mb-3">
               Notre cabinet
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-bronze-900 mb-4">
@@ -498,7 +468,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CTA ═══════════════════ */}
-      <section className="py-24 bg-cream-100/70 backdrop-blur-sm">
+      <section className="py-24 bg-emerald-50/60 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-4xl sm:text-5xl font-bold text-bronze-900 mb-6">
