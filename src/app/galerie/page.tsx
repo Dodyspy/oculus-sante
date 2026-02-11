@@ -85,7 +85,7 @@ export default function GaleriePage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 gradient-bronze-subtle">
+      <section className="pt-32 pb-16 bg-cream-100/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -103,7 +103,7 @@ export default function GaleriePage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px] lg:auto-rows-[250px]">
             {galleryItems.map((item, index) => (
@@ -179,7 +179,7 @@ export default function GaleriePage() {
       </AnimatePresence>
 
       {/* Info Section */}
-      <section className="py-16 gradient-bronze-subtle">
+      <section className="py-16 bg-cream-100/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -215,7 +215,7 @@ export default function GaleriePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white/70 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-4xl font-bold text-bronze-900 mb-6">

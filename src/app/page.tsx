@@ -85,8 +85,7 @@ export default function Home() {
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 gradient-bronze-subtle" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,134,11,0.08),transparent_70%)]" />
+        <div className="absolute inset-0 bg-white/70 backdrop-blur-sm" />
 
         {/* Decorative elements */}
         <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-bronze-200/20 blur-3xl" />
@@ -243,7 +242,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ SERVICES ═══════════════════ */}
-      <section id="services" className="py-24 bg-white">
+      <section id="services" className="py-24 bg-white/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -289,7 +288,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ ABOUT PREVIEW ═══════════════════ */}
-      <section className="py-24 gradient-bronze-subtle">
+      <section className="py-24 bg-cream-100/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
@@ -356,7 +355,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ TEAM PREVIEW ═══════════════════ */}
-      <section id="equipe" className="py-24 bg-white">
+      <section id="equipe" className="py-24 bg-white/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -407,7 +406,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ STATS ═══════════════════ */}
-      <section className="py-20 gradient-bronze">
+      <section className="py-20 gradient-bronze bg-opacity-70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -432,7 +431,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ GALLERY PREVIEW ═══════════════════ */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -499,7 +498,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CTA ═══════════════════ */}
-      <section className="py-24 gradient-bronze-subtle">
+      <section className="py-24 bg-cream-100/70 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-4xl sm:text-5xl font-bold text-bronze-900 mb-6">

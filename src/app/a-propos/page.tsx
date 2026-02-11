@@ -84,7 +84,7 @@ export default function AProposPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 gradient-bronze-subtle">
+      <section className="pt-32 pb-16 bg-cream-100/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -103,7 +103,7 @@ export default function AProposPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
@@ -148,7 +148,7 @@ export default function AProposPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 gradient-bronze-subtle">
+      <section className="py-24 bg-cream-100/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -180,7 +180,7 @@ export default function AProposPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white/70 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
@@ -224,7 +224,7 @@ export default function AProposPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 gradient-bronze-subtle">
+      <section className="py-24 bg-cream-100/70 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-4xl font-bold text-bronze-900 mb-6">
