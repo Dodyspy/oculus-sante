@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -35,21 +36,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-full gradient-bronze flex items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              </div>
-            </div>
+          <Link href="/" className="flex items-center gap-2 group">
+            <Image
+              src="/logo.png"
+              alt="Oculus Santé Ophtalmologie"
+              width={48}
+              height={48}
+              className="h-12 w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+              priority
+            />
             <div className="flex flex-col">
               <span className="text-lg font-semibold tracking-wide text-bronze-800 font-serif">
                 Oculus Santé
@@ -66,10 +61,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-bronze-700 hover:text-bronze-500 transition-colors relative group"
+                className="px-4 py-2 text-sm font-medium text-bronze-700 hover:text-bronze-500 transition-all duration-300 ease-out relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-bronze-500 transition-all duration-300 group-hover:w-2/3 rounded-full" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-bronze-500 transition-all duration-500 ease-out group-hover:w-2/3 rounded-full" />
               </Link>
             ))}
           </div>
@@ -109,6 +104,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-bronze-100"
           >
             <div className="px-4 py-6 space-y-1">

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Eye,
@@ -93,22 +94,22 @@ export default function Home() {
 
         {/* Floating eye shapes */}
         <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/4 right-1/4 w-32 h-32 border border-bronze-200/30 rounded-full"
         />
         <motion.div
-          animate={{ y: [0, 15, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-1/3 right-1/3 w-48 h-48 border border-sage-200/20 rounded-full"
         />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1.1, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bronze-100/60 border border-bronze-200/50 mb-8">
                 <div className="w-2 h-2 rounded-full bg-sage-500 animate-pulse" />
@@ -132,14 +133,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
+                  className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-500 ease-out hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   Prendre rendez-vous
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/services"
-                  className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 transition-all duration-500 ease-out flex items-center justify-center gap-2"
                 >
                   Nos services
                 </Link>
@@ -164,85 +165,30 @@ export default function Home() {
 
             {/* Hero visual */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="hidden lg:flex items-center justify-center"
             >
               <div className="relative">
                 {/* Main circle */}
                 <div className="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-bronze-100 via-cream-200 to-sage-100 flex items-center justify-center shadow-2xl shadow-bronze-200/30">
                   <div className="w-[350px] h-[350px] rounded-full bg-gradient-to-br from-white via-cream-50 to-bronze-50 flex items-center justify-center">
-                    <div className="text-center">
-                      <svg
-                        viewBox="0 0 120 80"
-                        className="w-40 h-28 mx-auto"
-                        fill="none"
-                      >
-                        {/* Stylized eye */}
-                        <path
-                          d="M10 40 Q60 5 110 40 Q60 75 10 40Z"
-                          stroke="url(#goldGrad)"
-                          strokeWidth="2.5"
-                          fill="none"
-                        />
-                        <circle
-                          cx="60"
-                          cy="40"
-                          r="18"
-                          stroke="url(#goldGrad)"
-                          strokeWidth="2"
-                          fill="none"
-                        />
-                        <circle cx="60" cy="40" r="8" fill="#5a965a" />
-                        <circle cx="56" cy="36" r="3" fill="white" opacity="0.6" />
-                        {/* Cross */}
-                        <line
-                          x1="90"
-                          y1="15"
-                          x2="90"
-                          y2="30"
-                          stroke="url(#goldGrad)"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                        />
-                        <line
-                          x1="82.5"
-                          y1="22.5"
-                          x2="97.5"
-                          y2="22.5"
-                          stroke="url(#goldGrad)"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                        />
-                        <defs>
-                          <linearGradient
-                            id="goldGrad"
-                            x1="0"
-                            y1="0"
-                            x2="120"
-                            y2="80"
-                          >
-                            <stop offset="0%" stopColor="#b8860b" />
-                            <stop offset="50%" stopColor="#d4a828" />
-                            <stop offset="100%" stopColor="#c49a5c" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <p className="text-2xl font-bold text-bronze-800 font-serif mt-2">
-                        Oculus Santé
-                      </p>
-                      <p className="text-xs uppercase tracking-[0.25em] text-bronze-500 mt-1">
-                        Ophtalmologie
-                      </p>
-                    </div>
+                    <Image
+                      src="/logo.png"
+                      alt="Oculus Santé Ophtalmologie"
+                      width={280}
+                      height={280}
+                      className="w-64 h-auto object-contain drop-shadow-lg"
+                      priority
+                    />
                   </div>
                 </div>
 
                 {/* Floating cards */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -top-4 -left-8 glass-card rounded-2xl px-4 py-3 shadow-lg"
                 >
                   <div className="flex items-center gap-2">
@@ -262,7 +208,7 @@ export default function Home() {
 
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -bottom-4 -right-8 glass-card rounded-2xl px-4 py-3 shadow-lg"
                 >
                   <div className="flex items-center gap-2">
@@ -287,7 +233,7 @@ export default function Home() {
         {/* Scroll indicator */}
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <div className="w-6 h-10 rounded-full border-2 border-bronze-300 flex items-start justify-center p-1.5">
@@ -566,14 +512,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
+                className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-500 ease-out hover:-translate-y-1 flex items-center justify-center gap-2"
               >
                 Prendre rendez-vous
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="tel:+33189462959"
-                className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 transition-all duration-300 flex items-center justify-center gap-2"
+                className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 transition-all duration-500 ease-out flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4" />
                 01 89 46 29 59

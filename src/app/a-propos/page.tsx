@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Phone,
@@ -108,73 +109,13 @@ export default function AProposPage() {
             <AnimatedSection>
               <div className="relative">
                 <div className="w-full aspect-square rounded-3xl bg-gradient-to-br from-bronze-200 via-cream-200 to-sage-100 flex items-center justify-center shadow-2xl shadow-bronze-200/30 overflow-hidden">
-                  <div className="text-center p-12">
-                    <svg
-                      viewBox="0 0 120 80"
-                      className="w-48 h-32 mx-auto mb-6"
-                      fill="none"
-                    >
-                      <path
-                        d="M10 40 Q60 5 110 40 Q60 75 10 40Z"
-                        stroke="url(#goldGradAbout)"
-                        strokeWidth="2"
-                        fill="none"
-                      />
-                      <circle
-                        cx="60"
-                        cy="40"
-                        r="18"
-                        stroke="url(#goldGradAbout)"
-                        strokeWidth="1.5"
-                        fill="none"
-                      />
-                      <circle cx="60" cy="40" r="8" fill="#5a965a" />
-                      <circle
-                        cx="56"
-                        cy="36"
-                        r="3"
-                        fill="white"
-                        opacity="0.6"
-                      />
-                      <line
-                        x1="90"
-                        y1="15"
-                        x2="90"
-                        y2="30"
-                        stroke="url(#goldGradAbout)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <line
-                        x1="82.5"
-                        y1="22.5"
-                        x2="97.5"
-                        y2="22.5"
-                        stroke="url(#goldGradAbout)"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      <defs>
-                        <linearGradient
-                          id="goldGradAbout"
-                          x1="0"
-                          y1="0"
-                          x2="120"
-                          y2="80"
-                        >
-                          <stop offset="0%" stopColor="#b8860b" />
-                          <stop offset="50%" stopColor="#d4a828" />
-                          <stop offset="100%" stopColor="#c49a5c" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                    <p className="text-3xl font-bold text-bronze-800 font-serif">
-                      Oculus Santé
-                    </p>
-                    <p className="text-sm uppercase tracking-[0.25em] text-bronze-500 mt-2">
-                      Ophtalmologie
-                    </p>
-                  </div>
+                  <Image
+                    src="/logo.png"
+                    alt="Oculus Santé Ophtalmologie"
+                    width={400}
+                    height={400}
+                    className="w-3/4 h-auto object-contain drop-shadow-lg"
+                  />
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-40 h-40 rounded-3xl bg-sage-200/40 -z-10" />
                 <div className="absolute -top-6 -left-6 w-32 h-32 rounded-3xl bg-bronze-200/40 -z-10" />
