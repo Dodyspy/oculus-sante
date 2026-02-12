@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Eye,
@@ -20,6 +19,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MagneticButton from "@/components/MagneticButton";
 import TiltCard from "@/components/TiltCard";
+import Eye3D from "@/components/Eye3D";
 import { ScrollReveal, StaggerReveal } from "@/components/GSAPAnimations";
 
 const services = [
@@ -175,18 +175,9 @@ export default function Home() {
               className="hidden lg:flex items-center justify-center"
             >
               <div className="relative">
-                {/* Main circle */}
+                {/* Main circle with 3D Eye */}
                 <div className="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-bronze-100 via-cream-200 to-sage-100 flex items-center justify-center shadow-2xl shadow-bronze-200/30">
-                  <div className="w-[350px] h-[350px] rounded-full bg-gradient-to-br from-white via-cream-50 to-bronze-50 flex items-center justify-center">
-                    <Image
-                      src="/logo.png"
-                      alt="Oculus Santé Ophtalmologie"
-                      width={280}
-                      height={280}
-                      className="w-64 h-auto object-contain drop-shadow-lg"
-                      priority
-                    />
-                  </div>
+                  <Eye3D />
                 </div>
 
                 {/* Floating cards with TiltCard */}
