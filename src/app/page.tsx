@@ -17,6 +17,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import MagneticButton from "@/components/MagneticButton";
 import TiltCard from "@/components/TiltCard";
 
@@ -390,10 +391,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { value: "15+", label: "Années d'expérience" },
-              { value: "10k+", label: "Patients suivis" },
-              { value: "3", label: "Spécialistes" },
-              { value: "100%", label: "Équipement moderne" },
+              { value: 15, suffix: "+", label: "Années d'expérience" },
+              { value: 10, suffix: "k+", label: "Patients suivis" },
+              { value: 3, suffix: "", label: "Spécialistes" },
+              { value: 100, suffix: "%", label: "Équipement moderne" },
             ].map((stat, index) => (
               <AnimatedSection
                 key={stat.label}
@@ -401,7 +402,11 @@ export default function Home() {
                 className="text-center"
               >
                 <p className="text-4xl sm:text-5xl font-bold text-white mb-2 font-serif">
-                  {stat.value}
+                  <AnimatedCounter 
+                    target={stat.value} 
+                    suffix={stat.suffix}
+                    duration={2 + index * 0.3}
+                  />
                 </p>
                 <p className="text-sm text-white/80">{stat.label}</p>
               </AnimatedSection>
