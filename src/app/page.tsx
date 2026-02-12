@@ -269,7 +269,7 @@ export default function Home() {
       <section className="py-24 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection>
+            <ScrollReveal direction="left" distance={60}>
               <div className="relative">
                 <div className="w-full aspect-[4/3] rounded-3xl bg-gradient-to-br from-bronze-200 via-cream-300 to-emerald-100 overflow-hidden shadow-2xl shadow-bronze-200/30">
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -290,9 +290,9 @@ export default function Home() {
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl bg-sage-200/50 -z-10" />
                 <div className="absolute -top-4 -left-4 w-24 h-24 rounded-2xl bg-bronze-200/50 -z-10" />
               </div>
-            </AnimatedSection>
+            </ScrollReveal>
 
-            <AnimatedSection delay={0.2}>
+            <ScrollReveal direction="right" distance={60} delay={0.2}>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
                 À propos
               </p>
@@ -305,7 +305,7 @@ export default function Home() {
                 soins unique. Notre cabinet, situé au cœur de Boulogne-Billancourt,
                 a été conçu pour votre confort et votre bien-être.
               </p>
-              <ul className="space-y-4 mb-8">
+              <StaggerReveal className="space-y-4 mb-8" staggerDelay={0.1}>
                 {[
                   "Équipements de dernière génération",
                   "Équipe de spécialistes expérimentés",
@@ -319,7 +319,7 @@ export default function Home() {
                     <span className="text-bronze-700">{item}</span>
                   </li>
                 ))}
-              </ul>
+              </StaggerReveal>
               <Link
                 href="/a-propos"
                 className="inline-flex items-center gap-2 gradient-bronze text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-bronze-500/25 transition-all duration-300 hover:-translate-y-0.5"
@@ -327,7 +327,7 @@ export default function Home() {
                 En savoir plus
                 <ArrowRight className="w-4 h-4" />
               </Link>
-            </AnimatedSection>
+            </ScrollReveal>
           </div>
         </div>
       </section>
