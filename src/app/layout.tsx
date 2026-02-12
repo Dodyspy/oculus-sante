@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnhancedBackground from "@/components/EnhancedBackground";
+import PageTransition from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Oculus Santé Ophtalmologie | Boulogne-Billancourt",
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body className="antialiased">
         <EnhancedBackground />
         <Navbar />
-        <main>{children}</main>
+        <PageTransition>
+          <main>{children}</main>
+        </PageTransition>
         <Footer />
       </body>
     </html>
