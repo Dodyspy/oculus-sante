@@ -19,7 +19,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MagneticButton from "@/components/MagneticButton";
 import TiltCard from "@/components/TiltCard";
-import Eye3D from "@/components/Eye3D";
+import Logo3D from "@/components/Logo3D";
 import { ScrollReveal, StaggerReveal } from "@/components/GSAPAnimations";
 
 const services = [
@@ -175,9 +175,9 @@ export default function Home() {
               className="hidden lg:flex items-center justify-center"
             >
               <div className="relative">
-                {/* Main circle with 3D Eye */}
+                {/* Main circle with 3D Logo */}
                 <div className="w-[450px] h-[450px] rounded-full bg-gradient-to-br from-bronze-100 via-cream-200 to-sage-100 flex items-center justify-center shadow-2xl shadow-bronze-200/30">
-                  <Eye3D />
+                  <Logo3D />
                 </div>
 
                 {/* Floating cards with TiltCard */}
