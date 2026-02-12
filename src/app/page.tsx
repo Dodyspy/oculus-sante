@@ -350,23 +350,25 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <AnimatedSection key={member.name} delay={index * 0.15}>
-                <div className="group text-center p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 hover-lift">
-                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-bronze-200 to-cream-200 mx-auto mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                    <span className="text-3xl font-bold text-bronze-600 font-serif">
-                      {member.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </span>
+                <TiltCard className="h-full" tiltAmount={6}>
+                  <div className="group text-center p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 h-full">
+                    <div className="w-28 h-28 rounded-full bg-gradient-to-br from-bronze-200 to-cream-200 mx-auto mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                      <span className="text-3xl font-bold text-bronze-600 font-serif">
+                        {member.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-bronze-900 mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm text-bronze-500 mb-4">{member.role}</p>
+                    <p className="text-bronze-600/80 text-sm leading-relaxed">
+                      {member.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-semibold text-bronze-900 mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-bronze-500 mb-4">{member.role}</p>
-                  <p className="text-bronze-600/80 text-sm leading-relaxed">
-                    {member.description}
-                  </p>
-                </div>
+                </TiltCard>
               </AnimatedSection>
             ))}
           </div>
