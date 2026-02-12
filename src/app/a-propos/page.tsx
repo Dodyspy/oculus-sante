@@ -91,7 +91,7 @@ export default function AProposPage() {
               À propos
             </p>
             <h1 className="text-5xl sm:text-6xl font-bold text-bronze-900 mb-6">
-              Oculus Santé
+              OPHTALMOLOGIE Oculus Santé
             </h1>
             <p className="text-xl text-bronze-600/80 max-w-3xl mx-auto leading-relaxed">
               Depuis plus de 10 ans, nous mettons notre expertise au service de

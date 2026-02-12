@@ -22,10 +22,10 @@ export default function Footer() {
               />
               <div>
                 <p className="text-lg font-semibold text-cream-100 font-serif">
-                  Oculus Santé
+                  OPHTALMOLOGIE
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-bronze-400">
-                  Ophtalmologie
+                  Oculus Santé
                 </p>
               </div>
             </div>

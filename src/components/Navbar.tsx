@@ -47,10 +47,10 @@ export default function Navbar() {
             />
             <div className="flex flex-col">
               <span className="text-lg font-semibold tracking-wide text-bronze-800 font-serif">
-                Oculus Santé
+                OPHTALMOLOGIE
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-bronze-500 -mt-1">
-                Ophtalmologie
+                Oculus Santé
               </span>
             </div>
           </Link>
