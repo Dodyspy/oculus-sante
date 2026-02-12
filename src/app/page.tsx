@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Eye,
@@ -186,20 +187,14 @@ export default function Home() {
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -top-4 -left-8"
                 >
-                  <TiltCard className="glass-card rounded-2xl px-4 py-3 shadow-lg" tiltAmount={15}>
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
-                        <Scan className="w-4 h-4 text-emerald-600" />
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-bronze-800">
-                          Équipement
-                        </p>
-                        <p className="text-[10px] text-bronze-500">
-                          Dernière génération
-                        </p>
-                      </div>
-                    </div>
+                  <TiltCard className="glass-card rounded-2xl p-2 shadow-lg" tiltAmount={15}>
+                    <Image
+                      src="/equipment.png"
+                      alt="Équipement dernière génération"
+                      width={80}
+                      height={80}
+                      className="w-16 h-16 object-contain rounded-xl"
+                    />
                   </TiltCard>
                 </motion.div>
 
