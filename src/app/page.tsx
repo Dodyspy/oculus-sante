@@ -188,8 +188,8 @@ export default function Home() {
                 >
                   <TiltCard className="glass-card rounded-2xl px-4 py-3 shadow-lg" tiltAmount={15}>
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
-                        <Eye className="w-4 h-4 text-sage-600" />
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                        <Scan className="w-4 h-4 text-emerald-600" />
                       </div>
                       <div>
                         <p className="text-xs font-semibold text-bronze-800">
