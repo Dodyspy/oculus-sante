@@ -415,7 +415,7 @@ export default function Home() {
       {/* ═══════════════════ GALLERY PREVIEW ═══════════════════ */}
       <section className="py-24 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16" direction="up" distance={40}>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-emerald-600 mb-3">
               Notre cabinet
             </p>
@@ -425,9 +425,9 @@ export default function Home() {
             <p className="text-lg text-bronze-600/80 max-w-2xl mx-auto">
               Découvrez notre cabinet alliant modernité, confort et élégance.
             </p>
-          </AnimatedSection>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <StaggerReveal className="grid grid-cols-2 lg:grid-cols-4 gap-4" staggerDelay={0.08}>
             {[
               {
                 title: "Accueil",
@@ -449,10 +449,10 @@ export default function Home() {
                 color: "from-bronze-200 to-sage-200",
                 icon: "⚕️",
               },
-            ].map((item, index) => (
-              <AnimatedSection key={item.title} delay={index * 0.1}>
+            ].map((item) => (
+              <TiltCard key={item.title} className="h-full" tiltAmount={10}>
                 <div
-                  className={`aspect-square rounded-3xl bg-gradient-to-br ${item.color} flex items-center justify-center hover-lift cursor-pointer group overflow-hidden`}
+                  className={`aspect-square rounded-3xl bg-gradient-to-br ${item.color} flex items-center justify-center cursor-pointer group overflow-hidden h-full`}
                 >
                   <div className="text-center">
                     <span className="text-4xl mb-3 block group-hover:scale-125 transition-transform duration-300">
@@ -463,9 +463,9 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-              </AnimatedSection>
+              </TiltCard>
             ))}
-          </div>
+          </StaggerReveal>
 
           <AnimatedSection className="text-center mt-12">
             <Link
@@ -482,7 +482,7 @@ export default function Home() {
       {/* ═══════════════════ CTA ═══════════════════ */}
       <section className="py-24 bg-emerald-50/60 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection>
+          <ScrollReveal direction="up" distance={50}>
             <h2 className="text-4xl sm:text-5xl font-bold text-bronze-900 mb-6">
               Prenez soin de votre vue
             </h2>
@@ -491,22 +491,24 @@ export default function Home() {
               disposition pour un rendez-vous dans les meilleurs délais.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
+              <MagneticButton
                 href="/contact"
-                className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-500 ease-out hover:-translate-y-1 flex items-center justify-center gap-2"
+                className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 flex items-center justify-center gap-2"
+                strength={0.4}
               >
                 Prendre rendez-vous
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
+              </MagneticButton>
+              <MagneticButton
                 href="tel:+33189462959"
-                className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 transition-all duration-500 ease-out flex items-center justify-center gap-2"
+                className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 flex items-center justify-center gap-2"
+                strength={0.3}
               >
                 <Phone className="w-4 h-4" />
                 01 89 46 29 59
-              </a>
+              </MagneticButton>
             </div>
-          </AnimatedSection>
+          </ScrollReveal>
         </div>
       </section>
     </>
