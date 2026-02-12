@@ -1,31 +1,31 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, MeshDistortMaterial, Float } from "@react-three/drei";
 import * as THREE from "three";
 
 function EyeModel() {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const groupRef = useRef<THREE.Group>(null);
   const pupilRef = useRef<THREE.Mesh>(null);
   const irisRef = useRef<THREE.Mesh>(null);
 
   // Mouse tracking
   useFrame((state) => {
-    if (!meshRef.current || !pupilRef.current || !irisRef.current) return;
+    if (!groupRef.current || !pupilRef.current || !irisRef.current) return;
 
     const { mouse } = state;
     const targetX = mouse.x * 0.3;
     const targetY = mouse.y * 0.3;
 
     // Smooth look-at animation
-    meshRef.current.rotation.x = THREE.MathUtils.lerp(
-      meshRef.current.rotation.x,
+    groupRef.current.rotation.x = THREE.MathUtils.lerp(
+      groupRef.current.rotation.x,
       targetY,
       0.05
     );
-    meshRef.current.rotation.y = THREE.MathUtils.lerp(
-      meshRef.current.rotation.y,
+    groupRef.current.rotation.y = THREE.MathUtils.lerp(
+      groupRef.current.rotation.y,
       targetX,
       0.05
     );
@@ -46,8 +46,8 @@ function EyeModel() {
   // Gentle floating animation
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
-    if (meshRef.current) {
-      meshRef.current.position.y = Math.sin(time * 0.5) * 0.1;
+    if (groupRef.current) {
+      groupRef.current.position.y = Math.sin(time * 0.5) * 0.1;
     }
   });
 
@@ -57,7 +57,7 @@ function EyeModel() {
       rotationIntensity={0.1}
       floatIntensity={0.3}
     >
-      <group ref={meshRef}>
+      <group ref={groupRef}>
         {/* Outer sclera (white of eye) */}
         <Sphere args={[1, 64, 64]} scale={[1, 0.85, 0.5]}>
           <meshPhysicalMaterial
