@@ -50,7 +50,7 @@ export default function Navbar() {
                 OPHTALMOLOGIE
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-bronze-500 -mt-1">
-                Oculus Santé
+                OCULUS SANTÉ
               </span>
             </div>
           </Link>

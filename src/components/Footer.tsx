@@ -25,7 +25,7 @@ export default function Footer() {
                   OPHTALMOLOGIE
                 </p>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-bronze-400">
-                  Oculus Santé
+                  OCULUS SANTÉ
                 </p>
               </div>
             </div>
