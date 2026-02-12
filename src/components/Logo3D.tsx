@@ -12,6 +12,7 @@ function LogoModel() {
   // Load logo texture
   const texture = useTexture("/logo.png");
   texture.flipY = false;
+  texture.repeat.x = -1; // Flip horizontally to fix mirroring
 
   // Mouse tracking with smooth lerp
   useFrame(() => {
