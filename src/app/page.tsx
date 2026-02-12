@@ -20,6 +20,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MagneticButton from "@/components/MagneticButton";
 import TiltCard from "@/components/TiltCard";
+import { ScrollReveal, StaggerReveal } from "@/components/GSAPAnimations";
 
 const services = [
   {
@@ -221,7 +222,7 @@ export default function Home() {
       {/* ═══════════════════ SERVICES ═══════════════════ */}
       <section id="services" className="py-24 bg-emerald-50/60 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16" direction="up" distance={40}>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
               Nos expertises
             </p>
@@ -232,27 +233,25 @@ export default function Home() {
               Une prise en charge complète de votre santé visuelle avec des
               équipements de dernière génération.
             </p>
-          </AnimatedSection>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <AnimatedSection key={service.title} delay={index * 0.1}>
-                <TiltCard className="h-full" tiltAmount={8}>
-                  <div className="group p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 cursor-pointer h-full">
-                    <div className="w-14 h-14 rounded-2xl gradient-bronze flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                      <service.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-bronze-900 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-bronze-600/80 leading-relaxed">
-                      {service.description}
-                    </p>
+          <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
+            {services.map((service) => (
+              <TiltCard key={service.title} className="h-full" tiltAmount={8}>
+                <div className="group p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 cursor-pointer h-full">
+                  <div className="w-14 h-14 rounded-2xl gradient-bronze flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                    <service.icon className="w-7 h-7 text-white" />
                   </div>
-                </TiltCard>
-              </AnimatedSection>
+                  <h3 className="text-xl font-semibold text-bronze-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-bronze-600/80 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </TiltCard>
             ))}
-          </div>
+          </StaggerReveal>
 
           <AnimatedSection className="text-center mt-12">
             <Link
@@ -336,7 +335,7 @@ export default function Home() {
       {/* ═══════════════════ TEAM PREVIEW ═══════════════════ */}
       <section id="equipe" className="py-24 bg-cream-200/60 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16" direction="up" distance={40}>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
               Notre équipe
             </p>
@@ -346,33 +345,31 @@ export default function Home() {
             <p className="text-lg text-bronze-600/80 max-w-2xl mx-auto">
               Une équipe pluridisciplinaire dédiée à la santé de vos yeux.
             </p>
-          </AnimatedSection>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <AnimatedSection key={member.name} delay={index * 0.15}>
-                <TiltCard className="h-full" tiltAmount={6}>
-                  <div className="group text-center p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 h-full">
-                    <div className="w-28 h-28 rounded-full bg-gradient-to-br from-bronze-200 to-cream-200 mx-auto mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                      <span className="text-3xl font-bold text-bronze-600 font-serif">
-                        {member.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-bronze-900 mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm text-bronze-500 mb-4">{member.role}</p>
-                    <p className="text-bronze-600/80 text-sm leading-relaxed">
-                      {member.description}
-                    </p>
+          <StaggerReveal className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
+            {teamMembers.map((member) => (
+              <TiltCard key={member.name} className="h-full" tiltAmount={6}>
+                <div className="group text-center p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 h-full">
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-bronze-200 to-cream-200 mx-auto mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                    <span className="text-3xl font-bold text-bronze-600 font-serif">
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </span>
                   </div>
-                </TiltCard>
-              </AnimatedSection>
+                  <h3 className="text-xl font-semibold text-bronze-900 mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-bronze-500 mb-4">{member.role}</p>
+                  <p className="text-bronze-600/80 text-sm leading-relaxed">
+                    {member.description}
+                  </p>
+                </div>
+              </TiltCard>
             ))}
-          </div>
+          </StaggerReveal>
 
           <AnimatedSection className="text-center mt-12">
             <Link
