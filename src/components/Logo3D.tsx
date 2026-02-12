@@ -1,78 +1,69 @@
 "use client";
 
 import { useRef } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useTexture, Float } from "@react-three/drei";
-import * as THREE from "three";
-
-function LogoModel() {
-  const meshRef = useRef<THREE.Mesh>(null);
-  const { mouse } = useThree();
-
-  // Load logo texture
-  const texture = useTexture("/logo.png");
-  texture.flipY = false;
-  texture.repeat.x = -1; // Flip horizontally to fix mirroring
-
-  // Mouse tracking with smooth lerp
-  useFrame(() => {
-    if (!meshRef.current) return;
-
-    const targetX = mouse.x * 0.4;
-    const targetY = mouse.y * 0.4;
-
-    // Smooth look-at animation
-    meshRef.current.rotation.y = THREE.MathUtils.lerp(
-      meshRef.current.rotation.y,
-      targetX,
-      0.05
-    );
-    meshRef.current.rotation.x = THREE.MathUtils.lerp(
-      meshRef.current.rotation.x,
-      -targetY,
-      0.05
-    );
-  });
-
-  // Gentle floating animation
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    if (meshRef.current) {
-      meshRef.current.position.y = Math.sin(time * 0.5) * 0.05;
-    }
-  });
-
-  return (
-    <Float
-      speed={2}
-      rotationIntensity={0.1}
-      floatIntensity={0.3}
-    >
-      <mesh ref={meshRef}>
-        <planeGeometry args={[2.5, 2.5]} />
-        <meshBasicMaterial
-          map={texture}
-          transparent
-          side={THREE.DoubleSide}
-          alphaTest={0.1}
-        />
-      </mesh>
-    </Float>
-  );
-}
+import Image from "next/image";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function Logo3D() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Mouse position
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  // Smooth spring animation
+  const springConfig = { damping: 20, stiffness: 150 };
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [15, -15]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-15, 15]), springConfig);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   return (
-    <div className="w-full h-[400px] lg:h-[450px]">
-      <Canvas
-        camera={{ position: [0, 0, 3], fov: 50 }}
-        gl={{ antialias: true, alpha: true }}
-        style={{ background: "transparent" }}
+    <div 
+      ref={containerRef}
+      className="w-full h-[400px] lg:h-[450px] flex items-center justify-center"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ perspective: 1000 }}
+    >
+      <motion.div
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+        }}
+        animate={{
+          y: [0, -10, 0],
+        }}
+        transition={{
+          y: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }}
       >
-        <ambientLight intensity={1} />
-        <directionalLight position={[5, 5, 5]} intensity={1} />
-        <LogoModel />
-      </Canvas>
+        <Image
+          src="/logo.png"
+          alt="Oculus Santé Ophtalmologie"
+          width={350}
+          height={350}
+          className="w-[300px] h-[300px] lg:w-[350px] lg:h-[350px] object-contain drop-shadow-2xl"
+          priority
+        />
+      </motion.div>
     </div>
   );
 }
