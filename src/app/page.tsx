@@ -17,6 +17,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import MagneticButton from "@/components/MagneticButton";
+import TiltCard from "@/components/TiltCard";
 
 const services = [
   {
@@ -129,19 +131,21 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
+                <MagneticButton
                   href="/contact"
-                  className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-500 ease-out hover:-translate-y-1 flex items-center justify-center gap-2"
+                  className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 flex items-center justify-center gap-2"
+                  strength={0.4}
                 >
                   Prendre rendez-vous
                   <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
+                </MagneticButton>
+                <MagneticButton
                   href="/services"
-                  className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 transition-all duration-500 ease-out flex items-center justify-center gap-2"
+                  className="px-8 py-4 rounded-full text-base font-medium border-2 border-bronze-300 text-bronze-700 hover:bg-bronze-50 flex items-center justify-center gap-2"
+                  strength={0.3}
                 >
                   Nos services
-                </Link>
+                </MagneticButton>
               </div>
 
               {/* Quick info */}
@@ -183,25 +187,27 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Floating cards */}
+                {/* Floating cards with TiltCard */}
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-4 -left-8 glass-card rounded-2xl px-4 py-3 shadow-lg"
+                  className="absolute -top-4 -left-8"
                 >
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
-                      <Eye className="w-4 h-4 text-sage-600" />
+                  <TiltCard className="glass-card rounded-2xl px-4 py-3 shadow-lg" tiltAmount={15}>
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center">
+                        <Eye className="w-4 h-4 text-sage-600" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-bronze-800">
+                          Équipement
+                        </p>
+                        <p className="text-[10px] text-bronze-500">
+                          Dernière génération
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs font-semibold text-bronze-800">
-                        Équipement
-                      </p>
-                      <p className="text-[10px] text-bronze-500">
-                        Dernière génération
-                      </p>
-                    </div>
-                  </div>
+                  </TiltCard>
                 </motion.div>
 
               </div>
@@ -230,17 +236,19 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 0.1}>
-                <div className="group p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 hover-lift cursor-pointer h-full">
-                  <div className="w-14 h-14 rounded-2xl gradient-bronze flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="w-7 h-7 text-white" />
+                <TiltCard className="h-full" tiltAmount={8}>
+                  <div className="group p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 cursor-pointer h-full">
+                    <div className="w-14 h-14 rounded-2xl gradient-bronze flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      <service.icon className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-bronze-900 mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-bronze-600/80 leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-semibold text-bronze-900 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-bronze-600/80 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+                </TiltCard>
               </AnimatedSection>
             ))}
           </div>

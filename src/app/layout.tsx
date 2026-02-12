@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import EnhancedBackground from "@/components/EnhancedBackground";
 
 export const metadata: Metadata = {
   title: "Oculus Santé Ophtalmologie | Boulogne-Billancourt",
@@ -25,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="antialiased">
+        <CustomCursor />
+        <EnhancedBackground />
         <Navbar />
         <main>{children}</main>
         <Footer />
