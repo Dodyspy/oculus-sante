@@ -1,41 +1,13 @@
-"use client";
-
-import { useState } from "react";
 import {
   Phone,
   Mail,
   MapPin,
   Clock,
-  Send,
-  CheckCircle,
+  ArrowRight,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    nom: "",
-    prenom: "",
-    email: "",
-    telephone: "",
-    motif: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-    setFormState({
-      nom: "",
-      prenom: "",
-      email: "",
-      telephone: "",
-      motif: "",
-      message: "",
-    });
-  };
 
   return (
     <>
@@ -50,8 +22,8 @@ export default function ContactPage() {
               Prenez rendez-vous
             </h1>
             <p className="text-xl text-bronze-600/80 max-w-3xl mx-auto leading-relaxed">
-              Contactez-nous par téléphone ou via le formulaire ci-dessous.
-              Notre équipe vous répondra dans les meilleurs délais.
+              Contactez-nous par téléphone ou prenez rendez-vous en ligne.
+              Notre équipe vous accueille dans les meilleurs délais.
             </p>
           </AnimatedSection>
         </div>
@@ -67,7 +39,8 @@ export default function ContactPage() {
                 title: "Téléphone",
                 content: "01 89 46 29 59",
                 href: "tel:+33189462959",
-                sub: "Lun–Ven 9h–18h",
+                sub: "Lun–Ven 9h–19h",
+                external: false,
               },
               {
                 icon: Mail,
@@ -75,6 +48,7 @@ export default function ContactPage() {
                 content: "contact@oculus-sante.fr",
                 href: "mailto:contact@oculus-sante.fr",
                 sub: "Réponse sous 24h",
+                external: false,
               },
               {
                 icon: MapPin,
@@ -82,216 +56,72 @@ export default function ContactPage() {
                 content: "3 quai de Stalingrad",
                 href: "https://maps.google.com/?q=3+quai+de+Stalingrad+92100+Boulogne-Billancourt",
                 sub: "92100 Boulogne-Billancourt",
+                external: true,
               },
               {
                 icon: Clock,
-                title: "Horaires",
-                content: "Lun–Ven : 9h–18h",
-                href: null,
-                sub: "Sam : 9h–13h",
+                title: "Prendre RDV",
+                content: "Lun–Ven : 9h–19h",
+                href: "https://www.doctolib.fr/ophtalmologue/paris/veronica-stan",
+                sub: "Sam & Dim : Fermé",
+                external: true,
               },
             ].map((item, index) => (
               <AnimatedSection key={item.title} delay={index * 0.1}>
-                <div className="p-6 rounded-3xl border border-bronze-100 bg-gradient-to-br from-white to-cream-50 hover-lift text-center h-full">
-                  <div className="w-12 h-12 rounded-xl gradient-bronze flex items-center justify-center mx-auto mb-4">
+                <a
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  className="block p-6 rounded-3xl border border-bronze-100 bg-gradient-to-br from-white to-cream-50 hover:-translate-y-1 hover:shadow-lg hover:shadow-bronze-100/40 hover:border-bronze-200 transition-all duration-300 text-center h-full group"
+                >
+                  <div className="w-12 h-12 rounded-xl gradient-bronze flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-bronze-500 mb-2">
                     {item.title}
                   </h3>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      target={item.href.startsWith("http") ? "_blank" : undefined}
-                      rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-bronze-800 font-medium hover:text-bronze-500 transition-colors block"
-                    >
-                      {item.content}
-                    </a>
-                  ) : (
-                    <p className="text-bronze-800 font-medium">{item.content}</p>
-                  )}
+                  <p className="text-bronze-800 font-medium group-hover:text-bronze-500 transition-colors">
+                    {item.content}
+                  </p>
                   <p className="text-xs text-bronze-500 mt-1">{item.sub}</p>
-                </div>
+                </a>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Form + Map */}
+      {/* Map + Info + CTA */}
       <section className="py-24 bg-cream-200/60 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Form */}
+            {/* Doctolib CTA */}
             <AnimatedSection>
-              <div className="p-8 lg:p-10 rounded-3xl border border-bronze-100 bg-gradient-to-br from-white to-cream-50">
+              <div className="p-8 lg:p-10 rounded-3xl border border-bronze-100 bg-gradient-to-br from-white to-cream-50 flex flex-col justify-center h-full">
                 <h2 className="text-2xl font-bold text-bronze-900 mb-2">
-                  Demande de rendez-vous
+                  Prendre rendez-vous
                 </h2>
                 <p className="text-bronze-600/80 mb-8">
-                  Remplissez le formulaire et nous vous recontacterons rapidement.
+                  Réservez votre consultation en ligne directement via Doctolib.
                 </p>
-
-                <AnimatePresence mode="wait">
-                  {submitted ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="text-center py-16"
-                    >
-                      <div className="w-16 h-16 rounded-full bg-sage-100 flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle className="w-8 h-8 text-sage-600" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-bronze-900 mb-2">
-                        Message envoyé !
-                      </h3>
-                      <p className="text-bronze-600/80">
-                        Nous vous recontacterons dans les meilleurs délais.
-                      </p>
-                    </motion.div>
-                  ) : (
-                    <motion.form
-                      initial={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      onSubmit={handleSubmit}
-                      className="space-y-5"
-                    >
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-sm font-medium text-bronze-700 mb-1.5">
-                            Nom *
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            value={formState.nom}
-                            onChange={(e) =>
-                              setFormState({ ...formState, nom: e.target.value })
-                            }
-                            className="w-full px-4 py-3 rounded-xl border border-bronze-200 bg-white focus:outline-none focus:ring-2 focus:ring-bronze-400 focus:border-transparent transition-all text-bronze-800 placeholder:text-bronze-300"
-                            placeholder="Votre nom"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-bronze-700 mb-1.5">
-                            Prénom *
-                          </label>
-                          <input
-                            type="text"
-                            required
-                            value={formState.prenom}
-                            onChange={(e) =>
-                              setFormState({
-                                ...formState,
-                                prenom: e.target.value,
-                              })
-                            }
-                            className="w-full px-4 py-3 rounded-xl border border-bronze-200 bg-white focus:outline-none focus:ring-2 focus:ring-bronze-400 focus:border-transparent transition-all text-bronze-800 placeholder:text-bronze-300"
-                            placeholder="Votre prénom"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <label className="block text-sm font-medium text-bronze-700 mb-1.5">
-                            Email *
-                          </label>
-                          <input
-                            type="email"
-                            required
-                            value={formState.email}
-                            onChange={(e) =>
-                              setFormState({
-                                ...formState,
-                                email: e.target.value,
-                              })
-                            }
-                            className="w-full px-4 py-3 rounded-xl border border-bronze-200 bg-white focus:outline-none focus:ring-2 focus:ring-bronze-400 focus:border-transparent transition-all text-bronze-800 placeholder:text-bronze-300"
-                            placeholder="votre@email.fr"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-bronze-700 mb-1.5">
-                            Téléphone
-                          </label>
-                          <input
-                            type="tel"
-                            value={formState.telephone}
-                            onChange={(e) =>
-                              setFormState({
-                                ...formState,
-                                telephone: e.target.value,
-                              })
-                            }
-                            className="w-full px-4 py-3 rounded-xl border border-bronze-200 bg-white focus:outline-none focus:ring-2 focus:ring-bronze-400 focus:border-transparent transition-all text-bronze-800 placeholder:text-bronze-300"
-                            placeholder="06 XX XX XX XX"
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-bronze-700 mb-1.5">
-                          Motif de consultation
-                        </label>
-                        <select
-                          value={formState.motif}
-                          onChange={(e) =>
-                            setFormState({
-                              ...formState,
-                              motif: e.target.value,
-                            })
-                          }
-                          className="w-full px-4 py-3 rounded-xl border border-bronze-200 bg-white focus:outline-none focus:ring-2 focus:ring-bronze-400 focus:border-transparent transition-all text-bronze-800"
-                        >
-                          <option value="">Sélectionnez un motif</option>
-                          <option value="consultation">
-                            Consultation générale
-                          </option>
-                          <option value="urgence">Urgence ophtalmologique</option>
-                          <option value="controle">Contrôle de la vue</option>
-                          <option value="glaucome">Suivi glaucome</option>
-                          <option value="retine">Pathologie rétinienne</option>
-                          <option value="chirurgie">
-                            Bilan chirurgie réfractive
-                          </option>
-                          <option value="lentilles">
-                            Adaptation lentilles
-                          </option>
-                          <option value="autre">Autre</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-bronze-700 mb-1.5">
-                          Message
-                        </label>
-                        <textarea
-                          rows={4}
-                          value={formState.message}
-                          onChange={(e) =>
-                            setFormState({
-                              ...formState,
-                              message: e.target.value,
-                            })
-                          }
-                          className="w-full px-4 py-3 rounded-xl border border-bronze-200 bg-white focus:outline-none focus:ring-2 focus:ring-bronze-400 focus:border-transparent transition-all text-bronze-800 placeholder:text-bronze-300 resize-none"
-                          placeholder="Décrivez brièvement votre demande..."
-                        />
-                      </div>
-
-                      <button
-                        type="submit"
-                        className="w-full gradient-bronze text-white px-8 py-4 rounded-xl text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2"
-                      >
-                        Envoyer la demande
-                        <Send className="w-4 h-4" />
-                      </button>
-                    </motion.form>
-                  )}
-                </AnimatePresence>
+                <a
+                  href="https://www.doctolib.fr/ophtalmologue/paris/veronica-stan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gradient-bronze text-white px-8 py-4 rounded-xl text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                >
+                  Prendre rendez-vous sur Doctolib
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <div className="mt-8 flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-bronze-500" />
+                  <div>
+                    <p className="text-sm text-bronze-500">Ou appelez-nous</p>
+                    <a href="tel:+33189462959" className="text-lg font-semibold text-bronze-800 hover:text-bronze-500 transition-colors">
+                      01 89 46 29 59
+                    </a>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
 

@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-bronze-900 text-cream-200">
+    <footer role="contentinfo" aria-label="Pied de page" className="bg-bronze-900 text-cream-200">
       {/* Top accent line */}
       <div className="h-1 gradient-bronze" />
 
@@ -45,9 +45,7 @@ export default function Footer() {
               {[
                 { href: "/", label: "Accueil" },
                 { href: "/services", label: "Services" },
-                { href: "/equipe", label: "Équipe" },
                 { href: "/a-propos", label: "À propos" },
-                { href: "/galerie", label: "Galerie" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -107,14 +105,14 @@ export default function Footer() {
                 <Clock className="w-4 h-4 text-bronze-400 mt-0.5 shrink-0" />
                 <div>
                   <p>Lundi – Vendredi</p>
-                  <p className="text-cream-400">9h00 – 18h00</p>
+                  <p className="text-cream-400">9h00 – 19h00</p>
                 </div>
               </li>
               <li className="flex items-start gap-3 text-sm text-cream-300">
                 <Clock className="w-4 h-4 text-bronze-400 mt-0.5 shrink-0" />
                 <div>
-                  <p>Samedi</p>
-                  <p className="text-cream-400">9h00 – 13h00</p>
+                  <p>Samedi & Dimanche</p>
+                  <p className="text-cream-400">Fermé</p>
                 </div>
               </li>
             </ul>
@@ -129,13 +127,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <Link
-              href="#"
+              href="/mentions-legales"
               className="text-xs text-cream-400 hover:text-bronze-400 transition-colors duration-300 ease-out"
             >
               Mentions légales
             </Link>
             <Link
-              href="#"
+              href="/politique-confidentialite"
               className="text-xs text-cream-400 hover:text-bronze-400 transition-colors duration-300 ease-out"
             >
               Politique de confidentialité

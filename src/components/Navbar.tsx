@@ -9,9 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
-  { href: "/equipe", label: "Équipe" },
   { href: "/a-propos", label: "À propos" },
-  { href: "/galerie", label: "Galerie" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -27,6 +25,8 @@ export default function Navbar() {
 
   return (
     <nav
+      role="navigation"
+      aria-label="Navigation principale"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-white/90 backdrop-blur-xl shadow-lg shadow-bronze-500/5"
@@ -78,12 +78,14 @@ export default function Navbar() {
               <Phone className="w-4 h-4" />
               <span>01 89 46 29 59</span>
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="https://www.doctolib.fr/ophtalmologue/paris/veronica-stan"
+              target="_blank"
+              rel="noopener noreferrer"
               className="gradient-bronze text-white px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-bronze-500/25 transition-all duration-300 hover:-translate-y-0.5"
             >
               Prendre RDV
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -126,13 +128,15 @@ export default function Navbar() {
                   <Phone className="w-4 h-4" />
                   <span>01 89 46 29 59</span>
                 </a>
-                <Link
-                  href="/contact"
+                <a
+                  href="https://www.doctolib.fr/ophtalmologue/paris/veronica-stan"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}
                   className="block text-center gradient-bronze text-white px-6 py-3 rounded-full font-medium mt-2"
                 >
                   Prendre RDV
-                </Link>
+                </a>
               </div>
             </div>
           </motion.div>

@@ -81,6 +81,8 @@ export default function MagneticButton({
       <motion.a
         ref={ref as React.RefObject<HTMLAnchorElement>}
         href={href}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
         className={baseStyles}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}

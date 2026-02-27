@@ -7,8 +7,6 @@ import {
   Stethoscope,
   Scan,
   Glasses,
-  Syringe,
-  Shield,
   ArrowRight,
   Phone,
   MapPin,
@@ -16,7 +14,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import AnimatedCounter from "@/components/AnimatedCounter";
 import MagneticButton from "@/components/MagneticButton";
 import TiltCard from "@/components/TiltCard";
 import Logo3D from "@/components/Logo3D";
@@ -27,7 +24,7 @@ const services = [
     icon: Eye,
     title: "Consultation Ophtalmologique",
     description:
-      "Examen complet de la vue avec les technologies les plus avancées pour un diagnostic précis.",
+      "Examen complet de la vue avec les technologies avancées pour un diagnostic précis.",
   },
   {
     icon: Scan,
@@ -42,45 +39,13 @@ const services = [
       "Prescription de lunettes et lentilles de contact adaptées à votre vision.",
   },
   {
-    icon: Syringe,
-    title: "Injections Intravitréennes",
-    description:
-      "Traitement de la DMLA et des pathologies rétiniennes par injections spécialisées.",
-  },
-  {
     icon: Stethoscope,
     title: "Suivi du Glaucome",
     description:
       "Dépistage et suivi personnalisé du glaucome avec champ visuel et mesure de la tension oculaire.",
   },
-  {
-    icon: Shield,
-    title: "Chirurgie Réfractive",
-    description:
-      "Bilan pré-opératoire complet pour la chirurgie laser (LASIK, PKR) et implants.",
-  },
 ];
 
-const teamMembers = [
-  {
-    name: "Dr. Sophie Martin",
-    role: "Ophtalmologue — Chirurgie Réfractive",
-    description:
-      "Spécialiste en chirurgie réfractive avec plus de 15 ans d'expérience.",
-  },
-  {
-    name: "Dr. Alexandre Dubois",
-    role: "Ophtalmologue — Rétine Médicale",
-    description:
-      "Expert en pathologies rétiniennes et injections intravitréennes.",
-  },
-  {
-    name: "Dr. Claire Lefèvre",
-    role: "Ophtalmologue — Glaucome",
-    description:
-      "Spécialiste du glaucome et de la chirurgie filtrante.",
-  },
-];
 
 export default function Home() {
   return (
@@ -129,12 +94,12 @@ export default function Home() {
               <p className="text-lg text-bronze-700/80 max-w-lg mb-10 leading-relaxed">
                 Cabinet d&apos;ophtalmologie de référence à Boulogne-Billancourt.
                 Des soins d&apos;excellence dans un cadre moderne et chaleureux,
-                avec les technologies les plus avancées.
+                avec les technologies avancées.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <MagneticButton
-                  href="/contact"
+                  href="https://www.doctolib.fr/ophtalmologue/paris/veronica-stan"
                   className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 flex items-center justify-center gap-2"
                   strength={0.4}
                 >
@@ -162,7 +127,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-bronze-600">
                   <Clock className="w-4 h-4 text-bronze-500" />
-                  <span>Lun–Ven 9h–18h</span>
+                  <span>Lun–Ven 9h–19h</span>
                 </div>
               </div>
             </motion.div>
@@ -226,7 +191,7 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          <StaggerReveal className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
+          <StaggerReveal className="grid md:grid-cols-2 gap-6" staggerDelay={0.1}>
             {services.map((service) => (
               <TiltCard key={service.title} className="h-full" tiltAmount={8}>
                 <div className="group p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 cursor-pointer h-full">
@@ -323,153 +288,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ TEAM PREVIEW ═══════════════════ */}
-      <section id="equipe" className="py-24 bg-cream-200/60 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal className="text-center mb-16" direction="up" distance={40}>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-bronze-500 mb-3">
-              Notre équipe
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-bronze-900 mb-4">
-              Des spécialistes à votre écoute
-            </h2>
-            <p className="text-lg text-bronze-600/80 max-w-2xl mx-auto">
-              Une équipe pluridisciplinaire dédiée à la santé de vos yeux.
-            </p>
-          </ScrollReveal>
-
-          <StaggerReveal className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            {teamMembers.map((member) => (
-              <TiltCard key={member.name} className="h-full" tiltAmount={6}>
-                <div className="group text-center p-8 rounded-3xl border border-bronze-100 hover:border-bronze-200 bg-gradient-to-br from-white to-cream-50 h-full">
-                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-bronze-200 to-cream-200 mx-auto mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                    <span className="text-3xl font-bold text-bronze-600 font-serif">
-                      {member.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-bronze-900 mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-bronze-500 mb-4">{member.role}</p>
-                  <p className="text-bronze-600/80 text-sm leading-relaxed">
-                    {member.description}
-                  </p>
-                </div>
-              </TiltCard>
-            ))}
-          </StaggerReveal>
-
-          <AnimatedSection className="text-center mt-12">
-            <Link
-              href="/equipe"
-              className="inline-flex items-center gap-2 text-bronze-600 hover:text-bronze-500 font-medium transition-colors group"
-            >
-              Voir toute l&apos;équipe
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════ STATS ═══════════════════ */}
-      <section className="py-20 bg-emerald-700/90 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { value: 15, suffix: "+", label: "Années d'expérience" },
-              { value: 10, suffix: "k+", label: "Patients suivis" },
-              { value: 3, suffix: "", label: "Spécialistes" },
-              { value: 100, suffix: "%", label: "Équipement moderne" },
-            ].map((stat, index) => (
-              <AnimatedSection
-                key={stat.label}
-                delay={index * 0.1}
-                className="text-center"
-              >
-                <p className="text-4xl sm:text-5xl font-bold text-white mb-2 font-serif">
-                  <AnimatedCounter 
-                    target={stat.value} 
-                    suffix={stat.suffix}
-                    duration={2 + index * 0.3}
-                  />
-                </p>
-                <p className="text-sm text-white/80">{stat.label}</p>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ GALLERY PREVIEW ═══════════════════ */}
-      <section className="py-24 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal className="text-center mb-16" direction="up" distance={40}>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-emerald-600 mb-3">
-              Notre cabinet
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-bronze-900 mb-4">
-              Un espace pensé pour vous
-            </h2>
-            <p className="text-lg text-bronze-600/80 max-w-2xl mx-auto">
-              Découvrez notre cabinet alliant modernité, confort et élégance.
-            </p>
-          </ScrollReveal>
-
-          <StaggerReveal className="grid grid-cols-2 lg:grid-cols-4 gap-4" staggerDelay={0.08}>
-            {[
-              {
-                title: "Accueil",
-                color: "from-bronze-200 to-cream-200",
-                icon: "🏛️",
-              },
-              {
-                title: "Salle d'attente",
-                color: "from-sage-200 to-cream-200",
-                icon: "🪴",
-              },
-              {
-                title: "Salle d'examen",
-                color: "from-cream-200 to-bronze-200",
-                icon: "🔬",
-              },
-              {
-                title: "Équipements",
-                color: "from-bronze-200 to-sage-200",
-                icon: "⚕️",
-              },
-            ].map((item) => (
-              <TiltCard key={item.title} className="h-full" tiltAmount={10}>
-                <div
-                  className={`aspect-square rounded-3xl bg-gradient-to-br ${item.color} flex items-center justify-center cursor-pointer group overflow-hidden h-full`}
-                >
-                  <div className="text-center">
-                    <span className="text-4xl mb-3 block group-hover:scale-125 transition-transform duration-300">
-                      {item.icon}
-                    </span>
-                    <p className="text-sm font-medium text-bronze-800">
-                      {item.title}
-                    </p>
-                  </div>
-                </div>
-              </TiltCard>
-            ))}
-          </StaggerReveal>
-
-          <AnimatedSection className="text-center mt-12">
-            <Link
-              href="/galerie"
-              className="inline-flex items-center gap-2 text-bronze-600 hover:text-bronze-500 font-medium transition-colors group"
-            >
-              Voir la galerie complète
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* ═══════════════════ CTA ═══════════════════ */}
       <section className="py-24 bg-emerald-50/60 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -483,7 +301,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticButton
-                href="/contact"
+                href="https://www.doctolib.fr/ophtalmologue/paris/veronica-stan"
                 className="gradient-bronze text-white px-8 py-4 rounded-full text-base font-medium hover:shadow-xl hover:shadow-bronze-500/25 flex items-center justify-center gap-2"
                 strength={0.4}
               >

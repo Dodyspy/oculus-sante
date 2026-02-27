@@ -4,13 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EnhancedBackground from "@/components/EnhancedBackground";
 import PageTransition from "@/components/PageTransition";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
   title: "OPHTALMOLOGIE Oculus Santé | Boulogne-Billancourt",
   description:
-    "Cabinet d'ophtalmologie moderne à Boulogne-Billancourt. Consultations, examens de la vue, chirurgie réfractive et suivi personnalisé par des spécialistes qualifiés.",
+    "Cabinet d'ophtalmologie à Boulogne-Billancourt. Consultations, examens de la vue, OCT, correction visuelle et suivi du glaucome par des spécialistes qualifiés.",
   keywords:
-    "ophtalmologie, ophtalmologue, Boulogne-Billancourt, consultation yeux, chirurgie réfractive, examen vue, Oculus Santé",
+    "ophtalmologie, ophtalmologue, Boulogne-Billancourt, consultation yeux, examen vue, OCT, glaucome, correction vue, Oculus Santé",
   openGraph: {
     title: "OPHTALMOLOGIE Oculus Santé",
     description:
@@ -27,12 +28,19 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-6 focus:py-3 focus:rounded-full focus:gradient-bronze focus:text-white focus:text-sm focus:font-medium focus:shadow-lg"
+        >
+          Aller au contenu principal
+        </a>
         <EnhancedBackground />
         <Navbar />
         <PageTransition>
-          <main>{children}</main>
+          <main id="main-content" role="main" aria-label="Contenu principal">{children}</main>
         </PageTransition>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
