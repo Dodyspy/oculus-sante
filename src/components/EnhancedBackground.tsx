@@ -44,7 +44,7 @@ export default function EnhancedBackground() {
     window.addEventListener("resize", resize);
 
     // Create particles
-    const colors = ["#b8860b", "#d4a828", "#0d7a3f", "#34d399"];
+    const colors = ["#c9a96e", "#d4ba8c", "#a0c4b0", "#b4d2c3"];
     particlesRef.current = Array.from({ length: 30 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -114,7 +114,7 @@ export default function EnhancedBackground() {
 
       // Draw connections
       ctx.globalAlpha = 0.1;
-      ctx.strokeStyle = "#b8860b";
+      ctx.strokeStyle = "#c9a96e";
       ctx.lineWidth = 0.5;
 
       for (let i = 0; i < particlesRef.current.length; i++) {
@@ -157,29 +157,28 @@ export default function EnhancedBackground() {
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse at 15% 15%, rgba(13, 122, 63, 0.12) 0%, transparent 45%),
-            radial-gradient(ellipse at 85% 20%, rgba(184, 134, 11, 0.14) 0%, transparent 45%),
-            radial-gradient(ellipse at 50% 90%, rgba(13, 122, 63, 0.08) 0%, transparent 40%),
-            radial-gradient(ellipse at 70% 60%, rgba(212, 168, 40, 0.06) 0%, transparent 40%),
-            linear-gradient(160deg, #edfdf5 0%, #fdf9f3 30%, #f5ead6 60%, #d1fae5 100%)
+            radial-gradient(ellipse at 20% 20%, rgba(212, 186, 140, 0.3) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 80%, rgba(180, 210, 195, 0.3) 0%, transparent 50%),
+            radial-gradient(ellipse at 60% 40%, rgba(220, 200, 165, 0.15) 0%, transparent 45%),
+            linear-gradient(150deg, #e8dcc8 0%, #f0e6d4 25%, #f5ede0 45%, #e8ece5 65%, #d8e8de 85%, #cde4d6 100%)
           `,
         }}
       />
 
       {/* Parallax layers */}
       <motion.div
-        className="absolute top-20 right-10 w-[500px] h-[500px] rounded-full opacity-20"
+        className="absolute top-20 right-10 w-[500px] h-[500px] rounded-full opacity-15"
         style={{
-          background: "radial-gradient(circle, #b8860b 0%, transparent 70%)",
-          filter: "blur(60px)",
+          background: "radial-gradient(circle, #d4ba8c 0%, transparent 70%)",
+          filter: "blur(80px)",
           y: springY1,
         }}
       />
 
       <motion.div
-        className="absolute bottom-20 left-10 w-[400px] h-[400px] rounded-full opacity-15"
+        className="absolute bottom-20 left-10 w-[400px] h-[400px] rounded-full opacity-12"
         style={{
-          background: "radial-gradient(circle, #0d7a3f 0%, transparent 70%)",
+          background: "radial-gradient(circle, #b4d2c3 0%, transparent 70%)",
           filter: "blur(80px)",
           y: springY2,
         }}
@@ -188,8 +187,8 @@ export default function EnhancedBackground() {
       <motion.div
         className="absolute top-1/2 left-1/3 w-[300px] h-[300px] rounded-full opacity-10"
         style={{
-          background: "radial-gradient(circle, #d4a828 0%, transparent 70%)",
-          filter: "blur(50px)",
+          background: "radial-gradient(circle, #dcc8a0 0%, transparent 70%)",
+          filter: "blur(60px)",
           y: springY3,
         }}
       />
@@ -214,9 +213,9 @@ export default function EnhancedBackground() {
         }}
       >
         <div
-          className="w-full h-full rounded-full border border-bronze-200/30"
+          className="w-full h-full rounded-full border border-bronze-200/20"
           style={{
-            background: "linear-gradient(135deg, rgba(184,134,11,0.1) 0%, transparent 50%)",
+            background: "linear-gradient(135deg, rgba(212,186,140,0.1) 0%, transparent 50%)",
           }}
         />
       </motion.div>
@@ -235,9 +234,9 @@ export default function EnhancedBackground() {
         }}
       >
         <div
-          className="w-full h-full rounded-full border border-emerald-300/30"
+          className="w-full h-full rounded-full border border-emerald-300/20"
           style={{
-            background: "linear-gradient(135deg, rgba(13,122,63,0.1) 0%, transparent 50%)",
+            background: "linear-gradient(135deg, rgba(180,210,195,0.1) 0%, transparent 50%)",
           }}
         />
       </motion.div>
