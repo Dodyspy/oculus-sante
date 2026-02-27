@@ -75,10 +75,8 @@ const services = [
 
 function ServiceCard({
   service,
-  index,
 }: {
   service: (typeof services)[0];
-  index: number;
 }) {
   return (
     <div
@@ -155,7 +153,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 0.1}>
-                <ServiceCard service={service} index={index} />
+                <ServiceCard service={service} />
               </AnimatedSection>
             ))}
           </div>
