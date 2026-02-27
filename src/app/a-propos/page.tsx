@@ -89,7 +89,7 @@ export default function AProposPage() {
                 agréable possible.
               </p>
               <p className="text-lg text-bronze-600/80 leading-relaxed">
-                Un savoir-faire au service de votre santé
+                Notre équipe met son savoir-faire au service de votre santé
                 visuelle avec passion et dévouement.
               </p>
             </AnimatedSection>
