@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+const BASIC_AUTH_USER = process.env.BASIC_AUTH_USER;
+const BASIC_AUTH_PASS = process.env.BASIC_AUTH_PASS;
+
 function unauthorized() {
   return new NextResponse("Authentication required.", {
     status: 401,
@@ -11,8 +14,8 @@ function unauthorized() {
 }
 
 export function middleware(req: NextRequest) {
-  // Only protect Preview deployments
-  if (process.env.VERCEL_ENV !== "preview") {
+  // If no auth credentials configured, skip auth
+  if (!BASIC_AUTH_USER || !BASIC_AUTH_PASS) {
     return NextResponse.next();
   }
 
@@ -25,10 +28,7 @@ export function middleware(req: NextRequest) {
   const decoded = Buffer.from(encoded, "base64").toString("utf-8");
   const [username, password] = decoded.split(":");
 
-  if (
-    username === process.env.BASIC_AUTH_USER &&
-    password === process.env.BASIC_AUTH_PASS
-  ) {
+  if (username === BASIC_AUTH_USER && password === BASIC_AUTH_PASS) {
     return NextResponse.next();
   }
 
