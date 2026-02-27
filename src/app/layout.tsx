@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     "Cabinet d'ophtalmologie à Boulogne-Billancourt. Consultations, examens de la vue, OCT, correction visuelle et suivi du glaucome par des spécialistes qualifiés.",
   keywords:
     "ophtalmologie, ophtalmologue, Boulogne-Billancourt, consultation yeux, examen vue, OCT, glaucome, correction vue, Oculus Santé",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "OPHTALMOLOGIE Oculus Santé",
     description:
