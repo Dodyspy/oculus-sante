@@ -12,9 +12,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 const values = [
   {
     icon: Shield,
-    title: "Excellence médicale",
+    title: "Qualité des soins",
     description:
-      "Des soins de la plus haute qualité grâce à des équipements de dernière génération et une formation continue de notre équipe.",
+      "Des soins de haute qualité grâce à des équipements de dernière génération et une mise à jour continue des pratiques.",
   },
   {
     icon: Heart,
@@ -45,8 +45,7 @@ export default function AProposPage() {
             </h1>
             <p className="text-xl text-bronze-600/80 max-w-3xl mx-auto leading-relaxed">
               Un nouveau cabinet d&apos;ophtalmologie à Boulogne-Billancourt,
-              porté par une équipe de spécialistes expérimentés. L&apos;excellence
-              médicale au service de votre vision, dans un cadre moderne et
+              au service de votre vision dans un cadre moderne et
               chaleureux.
             </p>
           </AnimatedSection>
@@ -80,7 +79,7 @@ export default function AProposPage() {
               <p className="text-lg text-bronze-600/80 leading-relaxed mb-6">
                 Oculus Santé ouvre ses portes au 3 quai de Stalingrad à
                 Boulogne-Billancourt avec une ambition claire : offrir à chaque
-                patient des soins ophtalmologiques d&apos;excellence dans un
+                patient des soins ophtalmologiques de qualité dans un
                 environnement pensé pour votre confort et votre sérénité.
               </p>
               <p className="text-lg text-bronze-600/80 leading-relaxed mb-6">
@@ -90,9 +89,7 @@ export default function AProposPage() {
                 agréable possible.
               </p>
               <p className="text-lg text-bronze-600/80 leading-relaxed">
-                Notre équipe d&apos;ophtalmologues, forte d&apos;une solide
-                expérience acquise dans les meilleurs centres hospitaliers
-                parisiens, met son savoir-faire au service de votre santé
+                Un savoir-faire au service de votre santé
                 visuelle avec passion et dévouement.
               </p>
             </AnimatedSection>
@@ -140,7 +137,7 @@ export default function AProposPage() {
               Venez nous rencontrer
             </h2>
             <p className="text-lg text-bronze-600/80 mb-10">
-              Découvrez notre cabinet et rencontrez notre équipe de spécialistes.
+              Découvrez notre cabinet et rencontrez votre spécialiste.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

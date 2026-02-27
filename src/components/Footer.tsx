@@ -30,9 +30,9 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-cream-300 leading-relaxed">
-              Votre cabinet d&apos;ophtalmologie de référence à
+              Votre cabinet d&apos;ophtalmologie à
               Boulogne-Billancourt. Des soins de qualité dans un cadre
-              d&apos;exception.
+              moderne et chaleureux.
             </p>
           </div>
 

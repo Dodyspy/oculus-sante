@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "OPHTALMOLOGIE Oculus Santé",
     description:
-      "Votre cabinet d'ophtalmologie de référence à Boulogne-Billancourt",
+      "Votre cabinet d'ophtalmologie à Boulogne-Billancourt",
     type: "website",
   },
 };

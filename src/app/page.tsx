@@ -92,8 +92,8 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-bronze-700/80 max-w-lg mb-10 leading-relaxed">
-                Cabinet d&apos;ophtalmologie de référence à Boulogne-Billancourt.
-                Des soins d&apos;excellence dans un cadre moderne et chaleureux,
+                Cabinet d&apos;ophtalmologie à Boulogne-Billancourt.
+                Des soins de qualité dans un cadre moderne et chaleureux,
                 avec les technologies avancées.
               </p>
 
@@ -253,18 +253,17 @@ export default function Home() {
                 À propos
               </p>
               <h2 className="text-4xl sm:text-5xl font-bold text-bronze-900 mb-6">
-                L&apos;excellence au service de votre regard
+                Au service de votre regard
               </h2>
               <p className="text-lg text-bronze-600/80 leading-relaxed mb-6">
-                Chez Oculus Santé, nous combinons expertise médicale de pointe et
-                environnement haut de gamme pour vous offrir une expérience de
-                soins unique. Notre cabinet, situé au cœur de Boulogne-Billancourt,
+                Chez Oculus Santé, nous combinons expertise médicale et
+                environnement soigné pour vous offrir une expérience de
+                soins unique. Notre cabinet, situé à Boulogne-Billancourt,
                 a été conçu pour votre confort et votre bien-être.
               </p>
               <StaggerReveal className="space-y-4 mb-8" staggerDelay={0.1}>
                 {[
                   "Équipements de dernière génération",
-                  "Équipe de spécialistes expérimentés",
                   "Cadre moderne et chaleureux",
                   "Prise en charge personnalisée",
                 ].map((item) => (
@@ -296,8 +295,8 @@ export default function Home() {
               Prenez soin de votre vue
             </h2>
             <p className="text-lg text-bronze-600/80 mb-10 max-w-2xl mx-auto">
-              N&apos;attendez pas pour consulter. Notre équipe est à votre
-              disposition pour un rendez-vous dans les meilleurs délais.
+              N&apos;attendez pas pour consulter. Prenez rendez-vous
+              dans les meilleurs délais.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MagneticButton

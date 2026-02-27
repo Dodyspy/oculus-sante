@@ -49,7 +49,7 @@ const services = [
       "Prescription de lunettes et lentilles de contact adaptées à votre vision et votre mode de vie.",
     details: [
       "Prescription de lunettes correctrices",
-      "Lentilles souples et rigides",
+      "Lentilles souples",
       "Lentilles multifocales",
       "Contrôle de la myopie chez l'enfant",
     ],
@@ -140,8 +140,7 @@ export default function ServicesPage() {
             </h1>
             <p className="text-xl text-bronze-600/80 max-w-3xl mx-auto leading-relaxed">
               Une prise en charge complète et personnalisée de votre santé
-              visuelle, avec des équipements de dernière génération et une
-              équipe de spécialistes dédiés.
+              visuelle, avec des équipements de dernière génération.
             </p>
           </AnimatedSection>
         </div>
