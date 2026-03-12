@@ -28,6 +28,9 @@ export default function MentionsLegalesPage() {
                 <strong>Forme juridique :</strong> Entreprise Individuelle
               </p>
               <p>
+                <strong>SIRET :</strong> 98973990900012
+              </p>
+              <p>
                 <strong>Adresse :</strong> 3 quai de Stalingrad, 92100
                 Boulogne-Billancourt
               </p>
