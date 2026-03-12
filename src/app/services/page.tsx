@@ -19,7 +19,7 @@ const services = [
       "Examen complet de la vue avec les technologies avancées pour un diagnostic précis et personnalisé.",
     details: [
       "Mesure de l'acuité visuelle",
-      "Examen du fond d'œil",
+      "Rétinographie couleur",
       "Mesure de la pression intraoculaire",
       "Réfraction automatique et subjective",
       "Examen à la lampe à fente",
@@ -67,6 +67,7 @@ const services = [
       "Pachymétrie cornéenne",
       "OCT des fibres nerveuses",
       "Gonioscopie",
+      "Examen du fond d'œil",
     ],
     gradient: "from-rose-50 via-pink-50 to-fuchsia-50",
     accentColor: "bg-rose-500",
