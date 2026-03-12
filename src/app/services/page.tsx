@@ -34,7 +34,7 @@ const services = [
       "Tomographie par cohérence optique pour l'analyse détaillée de la rétine et du nerf optique.",
     details: [
       "OCT maculaire haute résolution",
-      "OCT du nerf optique (glaucome)",
+      "OCT du nerf optique",
       "Angiographie OCT sans injection",
       "Rétinographie couleur",
       "Suivi évolutif informatisé",
@@ -65,7 +65,7 @@ const services = [
       "Tonométrie de précision",
       "Champ visuel automatisé",
       "Pachymétrie cornéenne",
-      "OCT des fibres nerveuses",
+      "OCT",
       "Gonioscopie",
       "Examen du fond d'œil",
     ],
