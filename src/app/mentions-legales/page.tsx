@@ -25,8 +25,7 @@ export default function MentionsLegalesPage() {
                 Oculus Santé
               </p>
               <p>
-                <strong>Forme juridique :</strong> [À COMPLÉTER — ex : SELARL,
-                SCP, exercice libéral]
+                <strong>Forme juridique :</strong> Entreprise Individuelle
               </p>
               <p>
                 <strong>Adresse :</strong> 3 quai de Stalingrad, 92100
@@ -51,14 +50,10 @@ export default function MentionsLegalesPage() {
                 </a>
               </p>
               <p>
-                <strong>Directeur de la publication :</strong> [À COMPLÉTER —
-                nom du praticien responsable]
+                <strong>Directeur de la publication :</strong> STAN Anamaria-Veronica
               </p>
               <p>
-                <strong>N° RPPS :</strong> [À COMPLÉTER]
-              </p>
-              <p>
-                <strong>N° ADELI :</strong> [À COMPLÉTER]
+                <strong>N° RPPS :</strong> 1010 225 4280
               </p>
             </div>
 
@@ -81,13 +76,6 @@ export default function MentionsLegalesPage() {
                 >
                   www.conseil-national.medecin.fr
                 </a>
-              </p>
-              <p>
-                <strong>Titre de formation :</strong> [À COMPLÉTER — ex :
-                Docteur en médecine, DES Ophtalmologie]
-              </p>
-              <p>
-                <strong>Pays d&apos;obtention :</strong> [À COMPLÉTER]
               </p>
             </div>
 
