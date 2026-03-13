@@ -45,6 +45,8 @@ Le site est déployé automatiquement sur **Vercel** à chaque push sur la branc
 
 # 🎯 CLIENT HANDOVER GUIDE
 
+> **📦 TRANSFERRING REPOSITORY?** See [TRANSFER_GUIDE.md](./TRANSFER_GUIDE.md) for complete step-by-step instructions on transferring this repository from your GitHub account to the client's GitHub account.
+
 ## ✅ Pre-Deployment Checklist
 
 This website is **100% ready for production deployment**. All tests have passed:
